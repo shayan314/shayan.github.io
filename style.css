@@ -1,28 +1,26 @@
-/* Base Reset */
+/* Base Styles */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-:root { --bg-dark: #0f172a; --bg-card: #1e293b; --text-main: #f8fafc; --text-muted: #94a3b8; --accent: #38bdf8; }
+body { background-color: #0f172a; color: #f8fafc; font-family: sans-serif; line-height: 1.6; }
 
-body { background-color: var(--bg-dark); color: var(--text-main); font-family: sans-serif; line-height: 1.6; }
 .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 60px 0; }
 
-/* Projects Grid Layout */
+/* Grid aur Cards ka design */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
 
 .project-card {
-    background-color: var(--bg-card);
-    border: 1px solid #334155;
+    background-color: #1e293b;
     border-radius: 12px;
+    border: 1px solid #334155;
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
-/* Consistent Image Style for all cards */
 .project-image {
     width: 100%;
     height: 200px;
@@ -30,16 +28,10 @@ body { background-color: var(--bg-dark); color: var(--text-main); font-family: s
     display: block;
 }
 
-/* Horizontal Scroll for Splitter Screenshots */
-.project-image-slider {
-    width: 100%;
-    height: 200px;
-    overflow-x: auto;
-    display: flex;
-    background: #000;
-}
-.project-image-slider img { height: 100%; width: auto; object-fit: contain; padding: 5px; }
+.project-info { padding: 20px; flex-grow: 1; }
+.project-tag { color: #38bdf8; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px; display: block; }
+.btn { display: inline-block; background: #3b82f6; color: white; padding: 8px 16px; border-radius: 5px; text-decoration: none; margin-top: 15px; }
+.btn:hover { background: #2563eb; }
 
-.project-info { padding: 25px; flex-grow: 1; }
-.project-tag { font-size: 0.8rem; color: var(--accent); margin-bottom: 10px; display: block; font-weight: bold; }
-.btn { display: inline-block; background: #3b82f6; color: white; padding: 8px 16px; border-radius: 5px; text-decoration: none; font-size: 14px; margin-top: 10px; }
+/* Mobile Adjustments */
+@media (max-width: 768px) { .nav-links { display: none; } }
