@@ -1,37 +1,24 @@
-/* Base Styles */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background-color: #0f172a; color: #f8fafc; font-family: sans-serif; line-height: 1.6; }
+:root { --bg-dark: #0f172a; --bg-card: #1e293b; --text-main: #f8fafc; --text-muted: #94a3b8; --accent: #38bdf8; }
 
-.container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 60px 0; }
+body { background-color: var(--bg-dark); color: var(--text-main); font-family: sans-serif; line-height: 1.6; }
+.container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 40px 0; }
 
-/* Grid aur Cards ka design */
-.projects-grid {
+/* Navbar */
+.navbar { background: #0f172a; padding: 20px 0; position: sticky; top: 0; border-bottom: 1px solid #334155; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.nav-links a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: bold; }
+
+/* Grid for Projects & Reviews */
+.projects-grid, .reviews-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
-.project-card {
-    background-color: #1e293b;
-    border-radius: 12px;
-    border: 1px solid #334155;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
+.project-card, .review-card { background: var(--bg-card); padding: 20px; border-radius: 12px; border: 1px solid #334155; }
+.project-image { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; display: block; }
 
-.project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
-
-.project-info { padding: 20px; flex-grow: 1; }
-.project-tag { color: #38bdf8; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px; display: block; }
-.btn { display: inline-block; background: #3b82f6; color: white; padding: 8px 16px; border-radius: 5px; text-decoration: none; margin-top: 15px; }
-.btn:hover { background: #2563eb; }
-
-/* Mobile Adjustments */
-@media (max-width: 768px) { .nav-links { display: none; } }
+.btn { display: inline-block; background: #3b82f6; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 15px; }
+.footer { text-align: center; padding: 20px; color: var(--text-muted); }
